@@ -1,0 +1,134 @@
+<header class="nav">
+  <nav>
+  	<div id="menuToggle">
+  		<input type="checkbox"/>
+  		<span></span>
+  		<span></span>
+  		<span></span>
+      <ul id="menu" class='container highlightTextOut'>
+        <li><a alt="HOME">HOME</a></li>
+        <li><a alt="ARTICLES">ARTICLES</a></li>
+        <li><a alt="PORTFOLIO">PORTFOLIO</a></li>
+        <li><a alt="ABOUT">ABOUT</a></li>
+        <li><a alt="CONTACT">CONTACT</a></li>
+      </ul>
+  	</div>
+  </nav>
+</header>
+
+
+<div class="wrapper">
+  <div class="hero">
+    <section class="nerdy-pen">
+      <h1 class="nerdy-pen__text">I am
+       <span
+          class="txt-rotate"
+          data-period="2000"
+          data-rotate='[ "modular minded.", "accessibility focused.", "data driven.", "a researcher.", "a web padawan.", "a developer." ]'></span>
+      </h1>
+    </section>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none">
+      <polygon fill="white" points="0,100 100,0 100,100"/>
+    </svg>
+  </div>
+
+  <section class='about reveal'>
+    <h2><span class="underline--magical">About</span></h2>
+    <div class="content">
+      <div class="left">
+        <canvas id="myRadarChart"></canvas>
+      </div>
+      <div class="right">
+        <p>After being exposed to code in a web development internship many moons ago, I realised that this apparently difficult role was in fact quite easy to pick up and vaguely enjoyable. I knew that coding would always be an option for me, but reluctantly pursued a career that used my biology degree out of a sense of misplaced loyalty or something.</p>
+        <p>Returning from a mind-opening meditative trance of a journey around SE Asia, I realized I’m getting past my prime and should actually be doing something I enjoy with my life – so when my dream of being a Psychedelic Indie/Alternative rock god was destroyed, I applied to General Assembly.</p>
+        <p>If you can’t already tell from my Padawan comment earlier, I’m a full on Star Wars fan. On top of this I am immersed in the London LoFi/Indie scene and will take any opportunity to go to a small room above a pub to sway intimately to the depressing tunes of nearly unknown bands.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class='spotify reveal'>
+    <div class="content">
+      <div class="left">
+        <p>Above is a radar graph of my base stats. High base INT and CHA has allowed me to get to where I am today with minimal grinding, however low base LUK and STR has prevented me from reaching top tier, and having low STA has lead to a crippling dependance on caffine.</p>
+        <p class='second'>I’ve taken the liberty of embedding a Spotifiy playlist, showcasing an eclectic mix of my tastes, from dreampop to psychedelic folk. <span class='underline--magical'>Enjoy!</span></p>
+      </div>
+      <div class="right">
+        <iframe src="https://embed.spotify.com/?uri=spotify%3Auser%3A1122703268%3Aplaylist%3A0EolNWdCQ2vSGnpTOryOPo" frameborder="0" allowtransparency="true"></iframe>
+    </div>
+  </section>
+</div>
+
+<script type="text/javascript">
+
+//radar Chart
+var ctx = $("#myRadarChart");
+var data = {
+  labels: ["STA", "STR", "AGI", "LUK", "CHA", "INT"],
+  datasets: [
+    {
+      label: "DATA1",
+      backgroundColor: "rgba(141, 133, 255, 0.3)",
+      pointBackgroundColor: "#34b44a",
+      data: [10, 4, 13, 10, 17, 16]
+    }]
+};
+
+var options = {
+  title: {
+    display: false,
+  },
+	legend: {
+			display: false,
+				labels: {
+					display: false
+				}
+		},
+  elements: {
+        point: {
+            radius: 0
+        },
+        gridLines: {
+              display: false
+            }
+  },
+  scale: {
+    angleLines: {
+      color: '#eee'
+    },
+    gridLines: {
+      color: '#eee'
+    },
+    pointLabels: {
+      fontColor: '#000',
+			fontSize:10,
+      fontFamily: 'Helvetica'
+    },
+    ticks: {
+      min: 0,
+      max: 20,
+      stepSize: 20,
+      display: false
+    }
+  },
+  tooltips: {
+    enabled: false
+  }
+};
+
+var myRadarChart = new Chart(ctx, {
+    type: 'radar',
+    data: data,
+    options: options
+});
+
+
+//checkbox on click blur effect
+$( "#menuToggle" ).click(function() {
+    if (  $( '.wrapper' ).css( "opacity" ) == '1' ){
+        $('.wrapper').css("opacity","0.5");
+    } else {
+        $('.wrapper').css("opacity","1" );
+    }
+});
+
+</script>

@@ -33,10 +33,16 @@
   </div>
 
   <section class='about reveal'>
-    <h2><span class="underline--magical">About</span></h2>
+    <h2 class='margin40'><span class="underline--magical">About</span></h2>
     <div class="content">
       <div class="left">
-        <canvas id="myRadarChart"></canvas>
+        <div class="hexagon">
+				<div class="hexagon-in1">
+					<div class="hexagon-in2 jake" id='jake'>
+					</div>
+				</div>
+			</div>
+
       </div>
       <div class="right">
         <p>After being exposed to code in a web development internship many moons ago, I realised that this apparently difficult role was in fact quite easy to pick up and vaguely enjoyable. I knew that coding would always be an option for me, but reluctantly pursued a career that used my biology degree out of a sense of misplaced loyalty or something.</p>
@@ -56,9 +62,110 @@
         <iframe src="https://embed.spotify.com/?uri=spotify%3Auser%3A1122703268%3Aplaylist%3A0EolNWdCQ2vSGnpTOryOPo" frameborder="0" allowtransparency="true"></iframe>
     </div>
   </section>
-</div>
 
+
+<section class='about skills reveal'>
+  <h2><span class="underline--magical">Skills</span></h2>
+  <div class="content">
+    <div class="left">
+      <canvas id="myRadarChart"></canvas>
+    </div>
+    <div class="right">
+      <p>After being exposed to code in a web development internship many moons ago, I realised that this apparently difficult role was in fact quite easy to pick up and vaguely enjoyable. I knew that coding would always be an option for me, but reluctantly pursued a career that used my biology degree out of a sense of misplaced loyalty or something.</p>
+      <p>Returning from a mind-opening meditative trance of a journey around SE Asia, I realized I’m getting past my prime and should actually be doing something I enjoy with my life – so when my dream of being a Psychedelic Indie/Alternative rock god was destroyed, I applied to General Assembly.</p>
+      <p>If you can’t already tell from my Padawan comment earlier, I’m a full on Star Wars fan. On top of this I am immersed in the London LoFi/Indie scene and will take any opportunity to go to a small room above a pub to sway intimately to the depressing tunes of nearly unknown bands.</p>
+    </div>
+  </div>
+  <div class="legendBox">
+		<div class="languages">
+			<p><div> </div>languages</p>
+		</div>
+	</div>
+  <canvas id="myChart"></canvas>
+</section>
+
+</div>
 <script type="text/javascript">
+var ctx = document.getElementById("myChart");
+var myChart = new Chart(ctx, {
+  type: 'bar',
+  data: {
+    labels: ["Semantic HTML5", "CSS3", "ES6/jQuery", "Bootstrap", "CSS animation", "Angular", "Vue", "React", "chart.js (used to build this)", "Agile methodologies", "Wordpress", "Gulp", "Bower", "Ruby", "Photoshop", "Git/Github", "Node.js", "Rails", "SQL", "Express.js", "Monetate", "MongoDB","Accessability","TDD", "AWS", "npm"],
+    datasets: [{
+      label:'# of Tomatoes',
+      data: [20, 20, 19, 18, 17, 15, 5, 10, 15, 16, 5, 10, 10, 10, 12,15,15, 10, 5, 15, 17,12, 16, 7, 8,12],
+      backgroundColor: [
+        'rgba(255, 99, 132, 0.2)',
+        'rgba(54, 162, 235, 0.2)',
+        'rgba(255, 206, 86, 0.2)',
+        'rgba(75, 192, 192, 0.2)',
+        'rgba(153, 102, 255, 0.2)',
+        'rgba(255, 159, 64, 0.2)',
+        'rgba(255, 99, 132, 0.2)',
+        'rgba(54, 162, 235, 0.2)',
+        'rgba(255, 206, 86, 0.2)',
+        'rgba(75, 192, 192, 0.2)',
+        'rgba(153, 102, 255, 0.2)',
+        'rgba(255, 159, 64, 0.2)'
+      ],
+      borderColor: [
+        'rgba(255,99,132,1)',
+        'rgba(54, 162, 235, 1)',
+        'rgba(255, 206, 86, 1)',
+        'rgba(75, 192, 192, 1)',
+        'rgba(153, 102, 255, 1)',
+        'rgba(255, 159, 64, 1)',
+        'rgba(255,99,132,1)',
+        'rgba(54, 162, 235, 1)',
+        'rgba(255, 206, 86, 1)',
+        'rgba(75, 192, 192, 1)',
+        'rgba(153, 102, 255, 1)',
+        'rgba(255, 159, 64, 1)'
+      ],
+      borderWidth: 1
+    }]
+  },
+  options: {
+		legend: {
+		    display: false,
+		      labels: {
+		        display: false
+		      }
+		  },
+    responsive: false,
+    scales: {
+      xAxes: [{
+        ticks: {
+          maxRotation: 90,
+          minRotation: 80,
+          fontSize: 4
+        }
+      }],
+			yAxes: [{
+			    ticks: {
+			        beginAtZero:true,
+							stepSize:5,
+              fontSize: 4
+			    },
+			    scaleLabel: {
+
+			    },
+			    afterTickToLabelConversion : function(q){
+
+			       q.ticks[0] = 'Very confident';
+						 q.ticks[1] = 'Quite confident';
+						 q.ticks[2] = 'Understand basics';
+						 q.ticks[3] = 'Touched upon';
+						 q.ticks[4] = '';
+
+			    }
+			}]
+    },
+		tooltips: {
+				enabled: false
+	 }
+  }
+});
 
 //radar Chart
 var ctx = $("#myRadarChart");

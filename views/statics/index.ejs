@@ -78,49 +78,99 @@
   </div>
   <div class="legendBox">
 		<div class="languages">
-			<p><div> </div>languages</p>
+			<p><div> </div>Languages</p>
 		</div>
+    <div class="frameworks">
+      <p><div> </div>Frameworks</p>
+    </div>
+    <div class="libraries">
+      <p><div> </div>Libraries</p>
+    </div>
+    <div class="wow">
+      <p><div> </div>Ways of working</p>
+    </div>
+    <div class="version">
+      <p><div> </div>Version control</p>
+    </div>
+    <div class="other">
+      <p><div> </div>Other</p>
+    </div>
 	</div>
   <canvas id="myChart"></canvas>
 </section>
 
 </div>
 <script type="text/javascript">
-var ctx = document.getElementById("myChart");
+var ctx = document.getElementById("myChart").getContext("2d");
+var purple_orange_gradient = ctx.createLinearGradient(0, 0, 0, 170);
+purple_orange_gradient.addColorStop(0, 'rgba(255, 99, 132, 0.2)');
+purple_orange_gradient.addColorStop(1, 'rgba(75, 192, 192, 0.2)');
 var myChart = new Chart(ctx, {
   type: 'bar',
   data: {
-    labels: ["Semantic HTML5", "CSS3", "ES6/jQuery", "Bootstrap", "CSS animation", "Angular", "Vue", "React", "chart.js (used to build this)", "Agile methodologies", "Wordpress", "Gulp", "Bower", "Ruby", "Photoshop", "Git/Github", "Node.js", "Rails", "SQL", "Express.js", "Monetate", "MongoDB","Accessability","TDD", "AWS", "npm"],
+    labels: ["Semantic HTML5", "CSS3", "ES6/jQuery", "Bootstrap",'Subversion', "CSS animation", "Monetate", "Accessability","Agile methodologies","Angular", "chart.js (used to build this)","Express.js","Git/Github", "Node.js","npm","MongoDB","Photoshop", "React" ,  "Gulp", "Bower", "Ruby", "AWS", "Rails", "SQL",  "TDD", "Vue", "Wordpress"],
     datasets: [{
       label:'# of Tomatoes',
-      data: [20, 20, 19, 18, 17, 15, 5, 10, 15, 16, 5, 10, 10, 10, 12,15,15, 10, 5, 15, 17,12, 16, 7, 8,12],
+      data: [20, 20, 19, 18, 17,17, 17, 16, 16, 15, 15, 15,15,15, 12, 12,12, 10, 10, 10, 10, 10, 8, 7, 7, 5, 5],
       backgroundColor: [
         'rgba(255, 99, 132, 0.2)',
-        'rgba(54, 162, 235, 0.2)',
-        'rgba(255, 206, 86, 0.2)',
-        'rgba(75, 192, 192, 0.2)',
-        'rgba(153, 102, 255, 0.2)',
-        'rgba(255, 159, 64, 0.2)',
         'rgba(255, 99, 132, 0.2)',
-        'rgba(54, 162, 235, 0.2)',
-        'rgba(255, 206, 86, 0.2)',
+        purple_orange_gradient,
         'rgba(75, 192, 192, 0.2)',
+        'rgba(255, 255, 0, 0.2)',
+        'rgba(54, 162, 235, 0.2)',
         'rgba(153, 102, 255, 0.2)',
-        'rgba(255, 159, 64, 0.2)'
+        'rgba(54, 162, 235, 0.2)',
+        'rgba(54, 162, 235, 0.2)',
+        'rgba(255, 159, 64, 0.2)',
+        'rgba(75, 192, 192, 0.2)',
+        'rgba(255, 159, 64, 0.2)',
+    //12
+    'rgba(255, 255, 0, 0.2)',
+    'rgba(153, 102, 255, 0.2)',
+    'rgba(153, 102, 255, 0.2)',
+    'rgba(153, 102, 255, 0.2)',
+    'rgba(153, 102, 255, 0.2)',
+    'rgba(255, 159, 64, 0.2)',
+    'rgba(153, 102, 255, 0.2)',
+    'rgba(153, 102, 255, 0.2)',
+    'rgba(255, 99, 132, 0.2)',
+    'rgba(153, 102, 255, 0.2)',
+    'rgba(255, 159, 64, 0.2)',
+    'rgba(255, 99, 132, 0.2)',
+    'rgba(54, 162, 235, 0.2)',
+    'rgba(255, 159, 64, 0.2)',
+    'rgba(153, 102, 255, 0.2)',
+
       ],
       borderColor: [
         'rgba(255,99,132,1)',
-        'rgba(54, 162, 235, 1)',
-        'rgba(255, 206, 86, 1)',
+        'rgba(255,99,132,1)',
+        'rgba(255,99,132,1)',
         'rgba(75, 192, 192, 1)',
+        'rgba(255, 255, 0, 1)',
+        'rgba(54, 162, 235, 1)',
+        'rgba(153, 102, 255, 1)',
+        'rgba(54, 162, 235, 1)',
+        'rgba(54, 162, 235, 1)',
+        'rgba(255, 159, 64, 1)',
+        'rgba(75, 192, 192, 1)',
+        'rgba(255, 159, 64, 1)',
+        'rgba(255, 255, 0, 1)',
+        'rgba(153, 102, 255, 1)',
+        'rgba(153, 102, 255, 1)',
+        'rgba(153, 102, 255, 1)',
+        'rgba(153, 102, 255, 1)',
+        'rgba(255, 159, 64, 1)',
+        'rgba(153, 102, 255, 1)',
+        'rgba(153, 102, 255, 1)',
+        'rgba(255,99,132,1)',
         'rgba(153, 102, 255, 1)',
         'rgba(255, 159, 64, 1)',
         'rgba(255,99,132,1)',
         'rgba(54, 162, 235, 1)',
-        'rgba(255, 206, 86, 1)',
-        'rgba(75, 192, 192, 1)',
+        'rgba(255, 159, 64, 1)',
         'rgba(153, 102, 255, 1)',
-        'rgba(255, 159, 64, 1)'
       ],
       borderWidth: 1
     }]

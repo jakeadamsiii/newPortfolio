@@ -316,18 +316,51 @@ a:hover{
   margin:0 auto;
   height: 40px;
   margin-top: 100px;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 10px;
 }
 
-.legendBox .languages{
+.legendBox .languages, .legendBox .frameworks, .legendBox .libraries, .legendBox .wow, .legendBox .version, .legendBox .other {
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.legendBox .languages div{
+.legendBox .languages div, .legendBox .frameworks div, .legendBox .libraries div, .legendBox .wow div, .legendBox .version div, .legendBox .other div{
   width: 30px;
   height:10px;
   margin-right: 7px;
   background: rgba(255, 99, 132, 0.2);
   border: 1px solid rgba(255,99,132,1);
   }
+
+.legendBox .frameworks div{
+  background: rgba(255, 159, 64, 0.2);
+  border: 1px solid rgba(255, 159, 64, 1);
+  margin-left: 10px;
+}
+
+.legendBox .libraries div{
+  background: rgba(75, 192, 192, 0.2);
+  border: 1px solid rgba(75, 192, 192, 1);
+  margin-left: 10px;
+}
+
+.legendBox .wow div{
+  background: rgba(54, 162, 235, 0.2);
+  border: 1px solid rgba(54, 162, 235, 1);
+  margin-left: 10px;
+}
+
+.legendBox .version div{
+  background: rgba(255, 255, 0, 0.2);
+  border: 1px solid rgba(255, 255, 0, 1);
+  margin-left: 10px;
+}
+
+.legendBox .other div{
+  background: rgba(153, 102, 255, 0.2);
+  border: 1px solid rgba(153, 102, 255, 1);
+  margin-left: 10px;
+}

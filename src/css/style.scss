@@ -1,7 +1,15 @@
+@import url('https://fonts.googleapis.com/css?family=Raleway:200');
+
 *{
   margin: 0;
   padding: 0;
   font-family: 'Roboto', sans-serif;
+}
+
+p{
+  font-family: 'Raleway', sans-serif;
+  letter-spacing: 0.01em;
+  font-weight: bold;
 }
 
 .wrapper{
@@ -12,7 +20,7 @@
   margin:0 auto;
   overflow: auto;
   transition-property: opacity;
-  transition-duration: 1s;
+  transition-duration: 0.5s;
   .hero{
     position: relative;
     height: 500px;
@@ -102,8 +110,40 @@
   .skills{
     h2{
       margin-top: 0!important;
+      margin-bottom: 30px;
     }
   }
+ .portfolio{
+   margin-top: 50px;
+   h2{
+     font: 35px/25px 'Sanchez', serif;
+     width:500px;
+     margin-left: 0px;
+     text-align: center;
+     letter-spacing: 0.02em;
+   }
+   height:800px;
+   .content{
+     margin-top: 20px;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+   }
+   .left{
+     position: relative;
+     width: 50%;
+     margin-right: 10%;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     .screen{
+       transform:scale(0.8);
+     }
+   }
+   .right{
+     width: 40%;
+   }
+ }
 }
 //underline
 .underline--magical {
@@ -191,9 +231,9 @@ a:hover{
 }
 #menu{
     position: absolute;
-    left:50%;
+    left:60%;
     width: 50vw;
-    height:100vh;
+    height:calc(100vh + 100px);
     margin: -100px 0 0 -50px;
     padding: 50px;
     padding-top: 125px;
@@ -217,13 +257,13 @@ a:hover{
 /* Highlight text out  */
 .highlightTextOut a
 {
-    color: rgba(255, 255, 255, 0.3);
+    color: rgba(255, 255, 255, 0.3)!important;
 }
 
 .highlightTextOut a:before{
     position: absolute;
     color: #FFF;
-    top: 0px;
+    top: -3px;
     left: 0px;
     padding: 10px;
     overflow: hidden;
@@ -364,3 +404,413 @@ a:hover{
   border: 1px solid rgba(153, 102, 255, 1);
   margin-left: 10px;
 }
+
+//profolio text
+$background: #E0E0E0;
+$secondary: salmon;
+
+.font {  font-size:170px; text-align:center; text-rendering: optimizeLegibility; -webkit-font-smoothing: antialiased; font-family: "Avenir Next", "Helvetica Neue", sans-serif}
+
+
+@mixin shadow($color, $steps, $glow) {
+  $all: ();
+  $all: append($all, -1px 1px 0 rgba($color,.1), comma);
+  $all: append($all, 1px -1px 0 rgba($glow,.1), comma);
+  $all: append($all, 1px -1px 25px $glow, comma);
+  @for $i from 1 through $steps {
+    $all: append($all, append($i*-1px $i*1.9px $i*1px, rgba($color,2/$i)));
+  }
+  text-shadow: $all;
+}
+
+// Second mixin as I still have to figure out the direction parameters...
+@mixin shadow-alternate($color, $steps, $glow) {
+  $all: ();
+  $all: append($all, -1px -1px 0 rgba($color,.1), comma);
+  $all: append($all, 1px 1px 0 rgba($glow,.1), comma);
+  $all: append($all, 1px -1px 25px $glow, comma);
+  @for $i from 1 through $steps {
+    $all: append($all, append($i*-1px $i*-1.9px $i*1px, rgba($color,2/$i)));
+  }
+  text-shadow: $all;
+}
+
+.font {
+  cursor: pointer;
+  color: $background;
+  @include shadow( darken($background,25%), 25, white );
+  span {
+    color: $secondary;
+    @include shadow( darken(desaturate($secondary, 80%),20%), 25, lighten($secondary,10%) )
+      }
+}
+//modal
+.modal-img,.model-vid{
+  width:100%;
+  height:auto;
+}
+.modal-body{
+  padding:0px;
+}
+
+//imac stylings
+.device {
+  cursor: pointer;
+	background-image: url('./denim-fit.png');
+  background-position: 130px 30px;
+  background-size: contain;
+  background-repeat: no-repeat;
+	border-radius: 20px;
+	box-shadow:
+		0 0 0 5px #aaa inset,
+		0 20px 0 0 #000 inset,
+		20px 0 0 0 #000 inset,
+		0 -20px 0 0 #000 inset,
+		-20px 0 0 0 #000 inset,
+		0 0 0 0 #000 inset;
+	margin: auto;
+	position: relative;
+	width: 100px;
+	height: 107px;
+}
+
+.a, .b {
+	width: 66px;
+	height: 50px;
+	margin: auto;
+	right: 0;
+	left: 0;
+}
+.a {
+	background: #ddd;
+	border-radius: 50% 50% 0 0 / 20% 20% 0 0;
+	top: -50px;
+}
+.b {
+	background: #ddd;
+	border-radius: 0 0 50% 50% / 0 0 20% 20%;
+	top: 100%;
+}
+.c, .d, .e, .f, .g {
+	background: #ccc;
+}
+.c {
+	border-radius: 50% 4px 3px 40%;
+	top: 24px;
+	left: 95px;
+	width: 9px;
+	height: 24px;
+}
+.d {
+	border-radius: 4px;
+	top: 58px;
+	left: 98px;
+	width: 5px;
+	height: 31px;
+}
+.e, .f, .g {
+	border-radius: 2px 0 0 2px;
+	transition-duration: 0.2s;
+	left: 0;
+	width: 0;
+}
+.e {
+	top: 54px;
+	height: 20px;
+}
+.f, .g {
+	height: 28px;
+}
+.f {
+	top: 88px;
+}
+.g {
+	top: 124px;
+}
+.h, .i, .j {
+	transform: scale(0,0);
+}
+.h, .i {
+	border-radius: 50%;
+}
+.h, .j {
+	margin: auto;
+	right: 0;
+	left: 0;
+	z-index: 1;
+}
+.h {
+	background: #228;
+	box-shadow: 0 0 0 2px #333 inset;
+	top: 14px;
+	width: 7px;
+	height: 7px;
+}
+.i, .j, .k {
+	background: #333;
+}
+.i {
+	top: 27px;
+	left: calc(50% - 28px);
+	width: 6px;
+	height: 6px;
+}
+.j {
+	border-radius: 2px;
+	top: 28px;
+	width: 32px;
+	height: 4px;
+}
+.k {
+	border-radius: 50%;
+	right: 0;
+	bottom: 12px;
+	left: 0;
+	margin: auto;
+	width: 30px;
+	height: 30px;
+	transform: scale(0,0);
+}
+.l {
+	background: linear-gradient(#ccc, #ccc) no-repeat;
+	background-position: 0 60px;
+	border-radius: 0;
+	width: 100%;
+	height: 60px;
+	margin-top: 260px;
+}
+.m {
+	background-color: #000;
+	border-radius: 0 0 8px 8px;
+	top: 9px;
+	right: 0;
+	left: 0;
+	margin: auto;
+	width: 106px;
+	height: 16px;
+	transform: scale(1,0);
+	transform-origin: 50% 0%;
+}
+.m::before, .m::after {
+	border-radius: 50%;
+	border: 5px solid transparent;
+	border-top-color: #000;
+	content: "";
+	display: block;
+	position: absolute;
+	top: -4px;
+	width: 20px;
+	height: 20px;
+}
+.m::before {
+	left: -15px;
+	transform: rotate(45deg);
+}
+.m::after {
+	right: -15px;
+	transform: rotate(-45deg);
+}
+.apple, .apple-1el {
+	height: 40px;
+}
+.apple {
+	margin: 10px auto;
+	width: 32px;
+	transform: scale(1,0);
+	transform-origin: 50% 100%;
+}
+.apple-1el {
+	font-weight: 500;
+	margin: auto;
+	position: absolute;
+	top: -10px;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	width: 70px;
+	transform: scale(0,0);
+}
+.appleLeft, .appleRight, .apple-1el:before, .apple-1el:after {
+	background-color: #000;
+	border-radius: 45% 45% 50% 50%;
+	position: absolute;
+	bottom: 0;
+	width: 21px;
+	height: 30px;
+}
+.apple:before, .apple-1el:before {
+	content: "\02ca";
+	display: block;
+	font-size: 40px;
+	text-align: center;
+}
+.apple:before {
+	line-height: 36px;
+	transform-origin: 50% 100%;
+	width: 100%;
+}
+.apple-1el:before {
+	line-height: 16px;
+	text-indent: 10px;
+}
+.apple-1el:after {
+	content: "tv";
+	font-size: 40px;
+	line-height: 26px;
+	text-indent: 26px;
+}
+.appleRight, .apple-1el:after {
+	left: 11px;
+}
+.appleRight {
+	background-image: radial-gradient(45% 55% at 90% 41%,#ccc 45%, transparent 50%);
+}
+.apple-1el:after {
+	background-image: radial-gradient(45% 55% at 90% 41%,#222 45%, transparent 50%);
+}
+.appleRight div {
+	background: #404040;
+	border-radius: 8px;
+	position: absolute;
+	width: 16px;
+	transform: scale(0,0);
+}
+.appleRight div:nth-of-type(1),
+.appleRight div:nth-of-type(3),
+.appleRight div:nth-of-type(5) {
+	left: 3px;
+}
+.appleRight div:nth-of-type(2),
+.appleRight div:nth-of-type(4) {
+	right: 3px;
+}
+.appleRight div:nth-of-type(1),
+.appleRight div:nth-of-type(2) {
+	top: 34px;
+}
+.appleRight div:nth-of-type(3),
+.appleRight div:nth-of-type(4) {
+	top: 52px;
+}
+.appleRight div:nth-of-type(5) {
+	top: 70px;
+}
+.btn {
+	height: 16px;
+}
+.inc-btn {
+	height: 34px;
+}
+//imac
+.screen .device {
+		box-shadow:
+			0 0 0 0 #aaa inset,
+			0 30px 0 0 #000 inset,
+			24px 0 0 0 #000 inset,
+			0 -84px 0 0 #000 inset,
+			-24px 0 0 0 #000 inset;
+		border-radius: 20px;
+		width: 600px;
+		height: 440px;
+
+	}
+	.screen .a, .screen .b {
+		border-radius: 0;
+		transition-delay: 0s;
+	}
+	.screen .a {
+		top: calc(100% + 60px);
+		left: 0;
+		width: 160px;
+		height: 5px;
+	}
+	.screen .b {
+		top: 100%;
+		width: 120px;
+		height: 60px;
+	}
+	.screen .h {
+		top: 12px;
+	}
+	.screen .l {
+		background-position: 0 0;
+		border-radius: 0 0 20px 20px;
+	}
+	.screen .apple {
+		transform: scale(1,1);
+	}
+  /** === iPHONE === **/
+.phone{
+  transform: scale(0.5);
+    position: absolute;
+    top: -70px;
+    left: 65%;
+}
+  .iphone-body {
+    cursor: pointer;
+    position: relative;
+    background: #fff;
+    border: 4px solid #eee;
+    height: 600px;
+    width: 300px;
+    margin: 100px auto 100px auto;
+    border-radius: 40px;
+    box-shadow: 0 6px 0 0 #ccc;
+  }
+
+  .iphone-body:before {
+  	content: "";
+  	display: block;
+  	position: relative;
+  	top: 36px;
+  	background: #e7ebec;
+  	height: 6px;
+  	width: 60px;
+  	border-radius: 6px;
+  	margin: 0 auto;
+  }
+
+  .iphone-body:after {
+  	content: "";
+  	display: block;
+  	position: relative;
+  	top: 86px;
+  	background: none;
+  	height: 34px;
+  	width: 34px;
+  	border: 6px solid #e7ebec;
+  	border-radius: 50%;
+  	margin: 0 auto;
+  }
+
+  .camera-1 {
+  	position: absolute;
+  	background: #e7ebec;
+  	height: 8px;
+  	width: 8px;
+  	border-radius: 8px;
+  	margin: 12px 0 0 146px;
+  }
+
+  .camera-2 {
+  	position: absolute;
+  	background: #e7ebec;
+  	height: 10px;
+  	width: 10px;
+  	border-radius: 10px;
+  	margin: 28px 0 0 90px;
+  }
+
+  .iphone-screen {
+  	position: relative;
+  	top: 70px;
+  	background: url('./denim-mob.png');
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+  	height: 440px;
+  	width: 272px;
+  	margin: 0 auto;
+  	border: 4px solid #e7ebec;
+  	border-radius: 4px;
+  }

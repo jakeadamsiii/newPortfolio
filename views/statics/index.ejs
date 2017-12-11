@@ -37,12 +37,10 @@
     <div class="content">
       <div class="left">
         <div class="hexagon">
-				<div class="hexagon-in1">
-					<div class="hexagon-in2 jake" id='jake'>
-					</div>
-				</div>
-			</div>
-
+          <div class="hexagon-in1">
+            <div class="hexagon-in2 jake" id='jake'></div>
+          </div>
+        </div>
       </div>
       <div class="right">
         <p>After being exposed to code in a web development internship many moons ago, I realised that this apparently difficult role was in fact quite easy to pick up and vaguely enjoyable. I knew that coding would always be an option for me, but reluctantly pursued a career that used my biology degree out of a sense of misplaced loyalty or something.</p>
@@ -96,9 +94,71 @@
       <p><div> </div>Other</p>
     </div>
 	</div>
-  <canvas id="myChart"></canvas>
+  <canvas id="myChart" width="800" height="400"></canvas>
 </section>
 
+<section class='portfolio'>
+  <h2><span class="underline--magical">Portfolio</span></h2>
+
+  <div class="content denim">
+    <div class="left">
+      <div class="screen">
+        <div class="device">
+          <div class="e"></div>
+          <div class="f"></div>
+          <div class="g"></div>
+          <div class="h"></div>
+          <div class="i"></div>
+          <div class="j"></div>
+          <div class="k"></div>
+          <div class="l">
+            <div class="apple">
+              <div class="appleLeft">
+                <div class="apple-1el"></div>
+              </div>
+              <div class="appleRight">
+                <div class="btn"></div>
+                <div class="btn"></div>
+                <div class="btn"></div>
+                <div class="inc-btn"></div>
+                <div class="btn"></div>
+              </div>
+            </div>
+          </div>
+          <div class="b"></div>
+          <div class="a"></div>
+          <div class="m"></div>
+        </div>
+      </div>
+      <div class="phone">
+        <div class="iphone-body">
+          <div class="camera-1"></div>
+          <div class="camera-2"></div>
+          <div class="iphone-screen"></div>
+        </div>
+</div>
+      </div>
+
+<div class="right">
+    <p>After being exposed to code in a web development internship many moons ago, I realised that this apparently difficult role was in fact quite easy to pick up and vaguely enjoyable. I knew that coding would always be an option for me, but reluctantly pursued a career that used my biology degree out of a sense of misplaced loyalty or something.</p>
+    <p>Returning from a mind-opening meditative trance of a journey around SE Asia, I realized I’m getting past my prime and should actually be doing something I enjoy with my life – so when my dream of being a Psychedelic Indie/Alternative rock god was destroyed, I applied to General Assembly.</p>
+    <p>If you can’t already tell from my Padawan comment earlier, I’m a full on Star Wars fan. On top of this I am immersed in the London LoFi/Indie scene and will take any opportunity to go to a small room above a pub to sway intimately to the depressing tunes of nearly unknown bands.</p>
+
+</div>
+</div>
+</section>
+
+</div>
+
+<div id="myModal" class="modal fade" role="dialog">
+<div class="modal-dialog">
+  <!-- Modal content-->
+  <div class="modal-content">
+    <div class="modal-body">
+    </div>
+  </div>
+
+</div>
 </div>
 <script type="text/javascript">
 var ctx = document.getElementById("myChart").getContext("2d");
@@ -188,14 +248,14 @@ var myChart = new Chart(ctx, {
         ticks: {
           maxRotation: 90,
           minRotation: 80,
-          fontSize: 4
+          fontSize: 12
         }
       }],
 			yAxes: [{
 			    ticks: {
 			        beginAtZero:true,
 							stepSize:5,
-              fontSize: 4
+              fontSize: 12
 			    },
 			    scaleLabel: {
 
@@ -212,7 +272,9 @@ var myChart = new Chart(ctx, {
 			}]
     },
 		tooltips: {
-				enabled: false
+				enabled: true,
+        footerFontSize:0,
+        bodyFontSize: 0
 	 }
   }
 });
@@ -279,7 +341,7 @@ var myRadarChart = new Chart(ctx, {
 });
 
 
-//checkbox on click blur effect
+//checkbox on click opacity effect
 $( "#menuToggle" ).click(function() {
     if (  $( '.wrapper' ).css( "opacity" ) == '1' ){
         $('.wrapper').css("opacity","0.5");
@@ -288,4 +350,14 @@ $( "#menuToggle" ).click(function() {
     }
 });
 
+//modal on click of image
+$(".denim .device").click(function(){
+$(".modal-body").html("<img src='./css/denim-fit-big.png' class='modal-img'>");
+$("#myModal").modal();
+});
+
+$(".denim .iphone-body").click(function(){
+$(".modal-body").html("<img src='./css/denim-mob.png' class='modal-img'>");
+$("#myModal").modal();
+});
 </script>

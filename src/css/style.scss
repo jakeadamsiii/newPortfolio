@@ -1,4 +1,23 @@
 @import url('https://fonts.googleapis.com/css?family=Raleway:200');
+@import url('https://fonts.googleapis.com/css?family=Montserrat');;
+
+@font-face {
+	font-family: 'CoreCircus2DDot1';
+	src: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/209981/333BF4_1_0.eot');
+	src: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/209981/333BF4_1_0.eot?#iefix') format('embedded-opentype'), url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/209981/333BF4_1_0.woff2') format('woff2'), url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/209981/333BF4_1_0.woff') format('woff'), url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/209981/333BF4_1_0.ttf') format('truetype');
+}
+
+@font-face {
+	font-family: 'CoreCircus';
+	src: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/209981/333BF4_8_0.eot');
+	src: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/209981/333BF4_8_0.eot?#iefix') format('embedded-opentype'), url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/209981/333BF4_8_0.woff2') format('woff2'), url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/209981/333BF4_8_0.woff') format('woff'), url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/209981/333BF4_8_0.ttf') format('truetype');
+}
+
+$h1:  rgba(45,45,45,1);
+$blue: #98b5cc;
+$yellow: #ffcc00;
+$outline: rgba(#fff, .4);
+$shadow: rgba($yellow, .5);
 
 *{
   margin: 0;
@@ -10,6 +29,7 @@ p{
   font-family: 'Raleway', sans-serif;
   letter-spacing: 0.01em;
   font-weight: bold;
+  line-height: 26px;
 }
 
 .wrapper{
@@ -108,12 +128,24 @@ p{
     }
   }
   .skills{
+    .tech{
+      margin-left: 0;
+      margin-top: 100px!important;
+      margin-bottom:50px!important;
+    }
     h2{
       margin-top: 0!important;
       margin-bottom: 30px;
     }
+    .right{
+      p{
+        width: 90%;
+        margin: 0 auto;
+      }
+    }
   }
  .portfolio{
+   height:1800px;
    margin-top: 50px;
    h2{
      font: 35px/25px 'Sanchez', serif;
@@ -122,7 +154,7 @@ p{
      text-align: center;
      letter-spacing: 0.02em;
    }
-   height:800px;
+
    .content{
      margin-top: 20px;
      display: flex;
@@ -142,6 +174,67 @@ p{
    }
    .right{
      width: 40%;
+     .btn-box{
+       margin-top:30px;
+       display: flex;
+       justify-content: center;
+       align-items: center;
+       a:hover{
+         text-decoration: none;
+       }
+       p{
+         color: white;
+         font: 20px/20px 'Montserrat', sans-serif;
+         background: black;
+         width:200px;
+         padding:10px 0;
+         text-align: center;
+         font-weight: bold;
+         text-transform: uppercase;
+       }
+     }
+   }
+   p{
+     text-align: center;
+   }
+   .christmas{
+     margin-top:100px;
+     .left{
+       margin-right: 0;
+     }
+     .right{
+       margin-right: 10%;
+     }
+     .phone{
+       left: -27%;
+     }
+   }
+   .childrens{
+     margin-top: 100px;
+     .device{
+       background: url('./CW-sep.png'), white;
+       background-size: contain;
+       background-repeat: no-repeat;
+       background-position: center;
+     }
+     .right{
+       .width70{
+         width: 75%;
+         margin: 0 auto;
+       }
+     }
+   }
+   .laptop{
+      position: absolute;
+      top: 160px;
+      left: 180px;
+      transform: scale(0.8);
+      .device{
+        background: url('./CW-july.png'), white;
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+      }
    }
  }
 }
@@ -157,7 +250,6 @@ p{
 //radar chart
 #myRadarChart{
   margin:0 auto;
-  margin-top: 50px;
   // width: 750px!important;
    height: 300px!important;
 }
@@ -814,3 +906,82 @@ $secondary: salmon;
   	border: 4px solid #e7ebec;
   	border-radius: 4px;
   }
+  //laptop
+  .laptop .device {
+		box-shadow:
+			0 0 0 3px #aaa inset,
+			0 30px 0 0 #000 inset,
+			24px 0 0 0 #000 inset,
+			0 -24px 0 0 #000 inset,
+			-24px 0 0 0 #000 inset,
+			0 0 0 0 #000 inset;
+		border-radius: 20px 20px 0 0;
+		transform: translate(0,-10px);
+		width: 480px;
+		height: 320px
+	}
+	.laptop .a {
+		border-radius: 0 0 10% 10% / 0 0 10px 10px;
+		left: -30px;
+		width: 540px;
+		height: 20px;
+    margin-left: -30px;
+    border: 1px solid #aaa;
+	}
+	.laptop .b {
+    position: absolute;
+    background: #aaa;
+    border-radius: 0 0 5px 5px/0 0 10px 10px;
+    height: 6px;
+    margin-top: -6px;
+	}
+	.laptop .c, .laptop .d {
+		left: 480px;
+		width: 0;
+	}
+	.laptop .h {
+		top: 16px;
+		transition-delay: 0s;
+	}
+	.laptop .k {
+		transform: scale(0,0);
+	}
+  .laptop .l{
+    margin-top: 130px;
+  }
+
+
+
+.flicker {
+	font-family: 'CoreCircus', sans-serif;
+	font-size: 30px;
+	text-align: center;
+	line-height: 1;
+	color: $h1;
+	letter-spacing: -.5rem;
+  margin-bottom: 30px;
+}
+
+//button hover effects
+.wrapper .portfolio .right .btn-box .btn-fade{
+       background:#111;
+        &:hover, &:focus{
+            background:lighten(#111,25%);
+            transition:300ms ease-in;
+        }
+      }
+
+.christmas{
+  .flicker{
+    span{
+      font-family: 'CoreCircus', sans-serif;
+      font-size: 30px;
+      text-align: center;
+      line-height: 1;
+      color: $h1;
+      letter-spacing: -.5rem;
+      margin-bottom: 30px;
+      margin-left: 10px;
+    }
+  }
+}
